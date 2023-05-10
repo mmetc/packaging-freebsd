@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	git:devel/git@lite
 
-USES=		gmake go:1.20,no_targets
+USES=		gmake go,no_targets
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	crowdsecurity

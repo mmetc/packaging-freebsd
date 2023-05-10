@@ -1,6 +1,6 @@
 PORTNAME=	crowdsec-firewall-bouncer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.25
+DISTVERSION=	0.0.26
 CATEGORIES=	security
 
 MAINTAINER=	marco@crowdsec.net
@@ -12,13 +12,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	git:devel/git@lite
 
-USES=		gmake go:1.19,no_targets
+USES=		gmake go,no_targets
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	crowdsecurity
 GH_PROJECT=	cs-firewall-bouncer
 GH_TAGNAME=	${DISTVERSIONFULL}-freebsd
-_BUILD_TAG=     c24be9b6
+_BUILD_TAG=	4673fd27
 USE_RC_SUBR=	crowdsec_firewall
 
 MAKE_ARGS=	BUILD_VERSION="${DISTVERSIONFULL}" \
