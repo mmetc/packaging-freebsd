@@ -2,7 +2,7 @@
 
 set -eu
 
-pkg install python
+pkg install -y python poudriere git
 
 mkdir -p /usr/local/etc/ssl/certs
 mkdir -p /usr/local/etc/ssl/keys
