@@ -1,6 +1,6 @@
 PORTNAME=	crowdsec-firewall-bouncer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.26
+DISTVERSION=	0.0.27
 CATEGORIES=	security
 
 MAINTAINER=	marco@crowdsec.net
@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	crowdsecurity
 GH_PROJECT=	cs-firewall-bouncer
 GH_TAGNAME=	${DISTVERSIONFULL}-freebsd
-_BUILD_TAG=	4673fd27
+_BUILD_TAG=	f1f8b379
 USE_RC_SUBR=	crowdsec_firewall
 
 MAKE_ARGS=	BUILD_VERSION="${DISTVERSIONFULL}" \
