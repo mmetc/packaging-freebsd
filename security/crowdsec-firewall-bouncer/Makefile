@@ -11,8 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
-
-_BUILD_TAG=	f1f8b379
+_COMMIT=	1fcde2de
 _BUILD_DATE=	$$(date -u "+%F_%T")
 USE_RC_SUBR=	crowdsec_firewall
 
@@ -22,8 +21,8 @@ GO_BUILDFLAGS=	-trimpath -tags netgo \
 		-ldflags="\
 		-a -s -w -extldflags '-static' \
 		-X github.com/crowdsecurity/go-cs-lib/pkg/version.Version=${DISTVERSIONPREFIX}${DISTVERSION} \
-		-X github.com/crowdsecurity/go-cs-lib/pkg/version.BuildDate=${BUILD_DATE} \
-		-X github.com/crowdsecurity/go-cs-lib/pkg/version.Tag=${_BUILD_TAG}"
+		-X github.com/crowdsecurity/go-cs-lib/pkg/version.BuildDate=${_BUILD_DATE} \
+		-X github.com/crowdsecurity/go-cs-lib/pkg/version.Tag=${_COMMIT}"
 
 CGO_ENABLED=	0
 
