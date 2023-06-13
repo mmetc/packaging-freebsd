@@ -11,18 +11,20 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
+USE_GITHUB=	yes
+GH_ACCOUNT=	crowdsecurity
+GH_PROJECT=	cs-firewall-bouncer
+GH_TAGNAME=	1fcde2de
 
-_BUILD_TAG=	f1f8b379
 _BUILD_DATE=	$$(date -u "+%F_%T")
 USE_RC_SUBR=	crowdsec_firewall
 
-GO_MODULE=	github.com/crowdsecurity/cs-firewall-bouncer
 GO_TARGET=	${PORTNAME}:./${PORTNAME}
 GO_BUILDFLAGS=	-trimpath -tags netgo \
 		-ldflags="\
 		-a -s -w -extldflags '-static' \
 		-X github.com/crowdsecurity/go-cs-lib/pkg/version.Version=${DISTVERSIONPREFIX}${DISTVERSION} \
-		-X github.com/crowdsecurity/go-cs-lib/pkg/version.BuildDate=${BUILD_DATE} \
+		-X github.com/crowdsecurity/go-cs-lib/pkg/version.BuildDate=${_BUILD_DATE} \
 		-X github.com/crowdsecurity/go-cs-lib/pkg/version.Tag=${_BUILD_TAG}"
 
 CGO_ENABLED=	0
